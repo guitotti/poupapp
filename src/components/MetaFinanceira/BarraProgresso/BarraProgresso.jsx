@@ -1,4 +1,6 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { calculaMetaSelector } from "src/redux/selectors/calculaMetaSelector";
 import styled from "styled-components";
 
 export const BarraContainer = styled.div`
@@ -32,7 +34,7 @@ export const TextoProgresso = styled.div`
 `;
 
 const BarraProgresso = () => {
-  const progressoMeta = 50;
+  const progressoMeta = useSelector(calculaMetaSelector);
 
   return (
     <BarraContainer>
