@@ -29,10 +29,18 @@ const usuarioSlice = createSlice({
       }
       state.orcamentoDiario += parseFloat(valor);
     },
+    atualizaSaldoOrcamento: (state, action) => {
+      const saldo = action.payload;
+      state.orcamentoDiario += parseFloat(saldo);
+    },
   },
 });
 
-export const { defineUsuario, defineOrcamentoDiario, atualizaOrcamento } =
-  usuarioSlice.actions;
+export const {
+  defineUsuario,
+  defineOrcamentoDiario,
+  atualizaOrcamento,
+  atualizaSaldoOrcamento,
+} = usuarioSlice.actions;
 
 export default usuarioSlice.reducer;

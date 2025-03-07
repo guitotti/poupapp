@@ -12,6 +12,7 @@ import { WalletIcon } from "@components/Icones";
 import CartaoCorpo from "@components/Cartao/CartaoCorpo/CartaoCorpo";
 import { useDispatch, useSelector } from "react-redux";
 import { adicionaConta } from "src/redux/slices/contasSlice";
+import { atualizaSaldoOrcamento } from "src/redux/slices/usuarioSlice";
 
 export const Container = styled(CartaoCorpo)`
   padding: var(--padding-l) var(--padding-m);
@@ -57,6 +58,7 @@ const Contas = () => {
 
   const aoAdicionarConta = () => {
     dispatch(adicionaConta(novaConta));
+    dispatch(atualizaSaldoOrcamento(novaConta.saldo));
     handleCloseModal();
   };
 
