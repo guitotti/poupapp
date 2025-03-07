@@ -6,7 +6,7 @@ const initialState = {
 };
 
 const contasSlice = createSlice({
-  name: contas,
+  name: "contas",
   initialState,
   reducers: {
     adicionaConta: (state, action) => {
